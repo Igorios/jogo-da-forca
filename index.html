@@ -10,11 +10,16 @@
 <body>
 
     <div style="text-align:center;">
-        <canvas id="forca" height="500px" width="1200px"></canvas>
+        <canvas id="forca" height="500px" width="400px"></canvas>
     </div>
 
     <div class="palavraSecreta">
         
+    </div>
+
+    <div class="msg">
+        <span class="msgPerdeu"></span>
+        <span class="msgGanhou"></span>
     </div>
 
     <div class="botoesControle">
@@ -44,6 +49,10 @@
         <button id="tecla-X" onclick="verificaLetraEscolhida('X')">X</button>
         <button id="tecla-Y" onclick="verificaLetraEscolhida('Y')">Y</button>
         <button id="tecla-Z" onclick="verificaLetraEscolhida('Z')">Z</button>
+    </div>
+
+    <div class="classificacao">
+
     </div>
 
     <script src="js/canvas.js"></script>

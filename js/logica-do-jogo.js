@@ -1,23 +1,29 @@
 
 var tentativas = 6;
 var novaLista = [];
+var msgPerdeu = document.querySelector(".msgPerdeu");
+var msgGanhou = document.querySelector(".msgGanhou");
 var palavraSorteada;
 
 const palavraDaLista = [
     palavra01 = {
-        nome: "BOLA"
+        nome: "BOLA",
+        classificacao: "OBJETO"
     },
 
     palavra02 = {
-        nome: "CAVALO"
+        nome: "CAVALO",
+        classificacao: "ANIMAL"
     },
 
     palavra03 = {
-        nome: "CAMISA"
+        nome: "CAMISA",
+        classificacao: "OBJETO"
     },
 
     palavra04 = {
-        nome: "MELANCIA"
+        nome: "MELANCIA",
+        classificacao: "FRUTA"
     }
 
 ];
@@ -26,6 +32,8 @@ sorteandoPalavra();
 function sorteandoPalavra() {
 
     var palavraRandomica = parseInt(Math.random() * palavraDaLista.length);
+
+    categoria = palavraDaLista[palavraRandomica].classificacao;
 
     palavraSorteada = palavraDaLista[palavraRandomica].nome;
 
@@ -44,6 +52,9 @@ function verificaLetraEscolhida(letra){
 
 colocandoNaTela();
 function colocandoNaTela() {
+
+    var classificacao = document.querySelector(".classificacao");
+    classificacao.innerHTML = categoria;
 
     var palavraSecreta = document.querySelector(".palavraSecreta");
 
@@ -94,7 +105,7 @@ function comparaLista(letra) {
     }
 
     if (vitoria == true) {
-        alert("Você ganhou");
+        msgGanhou.textContent = "Parabéns!! Você ganhou";
         tentativas = 0;
     }
 
@@ -119,7 +130,7 @@ function pegaCanvas() {
             break;
         case 0:
             desenhaPernaEsquerda();
-            alert("Você perdeu");
+            msgPerdeu.textContent = `Você perdeu!! A palavra foi: ${palavraSorteada}`;
             break;                      
     }
 }
