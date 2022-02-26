@@ -54,7 +54,7 @@ colocandoNaTela();
 function colocandoNaTela() {
 
     var classificacao = document.querySelector(".classificacao");
-    classificacao.innerHTML = categoria;
+    classificacao.innerHTML = `Dica: ${categoria}`;
 
     var palavraSecreta = document.querySelector(".palavraSecreta");
 
